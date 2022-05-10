@@ -1,8 +1,3 @@
-img {
-  width: 100%;
-  height: 100%;
-}
-
 .notB {
   background: transparent !important;
   -webkit-transition: background-color 1000ms linear;
@@ -10,15 +5,10 @@ img {
   transition: background-color 1000ms linear;
 }
 
-.btn {
-  position: absolute;
-  margin: auto;
-  top: 30%;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.btn1 {
+  margin-left: 20px;
   width: 40%;
-  height: 10%;
+  height: 20%;
   border-radius: 24px;
   font-size: 2rem;
   background: #5eba23a8;
@@ -29,8 +19,7 @@ img {
 
 .imgt {
   /* animation: float 6s ease-in-out infinite; */
-  width: 40%;
-  height: 20%;
+  width: 100%;
   margin: auto;
   position: absolute;
   top: 0%;
@@ -56,46 +45,16 @@ img {
   }
 }
 
-body {
-  overflow-x: hidden;
-  margin: 0px;
-  font-family: monospace;
-  color: white;
-}
-
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-main {
-  width: 100vw;
-  height: 200vw;
-  z-index: 99;
-  position: absolute;
-  justify-content: center;
-  text-align: center;
-  pointer-events: none;
-  font-size: 5vh;
-}
-
-section {
-  min-height: 100vh;
-  padding: 20px;
-  font-size: 4vh;
-}
-
-#scrollProgress {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  z-index: 99;
-  font-size: 3vh;
-}
 
 .txt {
   text-align: justify;
   padding-left: 10%;
   padding-right: 10%;
+}
+
+.backBody {
+  background: url(https://www.fiatc.es/_cache_a257/_themesdelivery/staticblog/assets/img/uploads/2018/01/pasos-a-seguir-si-te-pierdes-en-el-bosque.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
