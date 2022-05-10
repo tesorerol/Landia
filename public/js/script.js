@@ -1,6 +1,3 @@
-$(window).on("load", function () {
-
-    "use strict";
 
     //Clear URL On Page Refresh
     var loc = window.location.href,
@@ -205,7 +202,6 @@ $(window).on("load", function () {
     setTimeout(function(){
         $(".loader-bg").fadeOut("slow");
     }, 1000);
-});
 
 jQuery(function ($) {
 
