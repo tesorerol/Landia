@@ -23,6 +23,7 @@
   text-align: center;
   font-size: 1rem;
   padding: 9px;
+  color: #fff !important;
 }
 
 .init {
@@ -159,9 +160,6 @@
 
   .init img {
     width: 100% !important;
-  }
-  .start {
-    color: #fff !important;
   }
 }
 
