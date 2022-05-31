@@ -3,7 +3,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export default function Earth({ ...props }) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/assets/earth.gltf')
+  const { nodes, materials, animations } = useGLTF('https://landiaworld.s3.sa-east-1.amazonaws.com/earth.gltf')
   const { actions } = useAnimations(animations, group)
   useEffect(() => {
     actions.ArmatureAction.play();
@@ -28,4 +28,4 @@ export default function Earth({ ...props }) {
   )
 }
 
-useGLTF.preload('/assets/earth.gltf')
+useGLTF.preload('https://landiaworld.s3.sa-east-1.amazonaws.com/earth.gltf')

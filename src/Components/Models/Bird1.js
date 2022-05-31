@@ -3,7 +3,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export default function Bird1(props) {
     const { bird, camera } = props;
-    const { nodes, materials, animations } = useGLTF('/assets/bird.gltf')
+    const { nodes, materials, animations } = useGLTF('https://landiaworld.s3.sa-east-1.amazonaws.com/bird.gltf')
     const { actions } = useAnimations(animations, bird)
     useEffect(() => {
         actions.fly.play();
@@ -23,4 +23,4 @@ export default function Bird1(props) {
     )
 }
 
-useGLTF.preload('/assets/bird.gltf')
+useGLTF.preload('https://landiaworld.s3.sa-east-1.amazonaws.com/bird.gltf')

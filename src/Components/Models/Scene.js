@@ -6,7 +6,7 @@ import { useFrame } from '@react-three/fiber';
 export default function Scene(props) {
   const { camera, orbit, bird } = props;
   const group = useRef()
-  const { nodes, materials } = useGLTF("/assets/test.gltf")
+  const { nodes, materials } = useGLTF("https://landiaworld.s3.sa-east-1.amazonaws.com/test.gltf")
   useFrame(() => {
     // console.log(orbit.current)
     // camera.current.lookAt(bird.current.position)

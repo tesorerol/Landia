@@ -8,14 +8,14 @@ import Website from './Views/Website';
 function App() {
   const [Type, seType] = useState(false);
 
-  // switch (Type) {
-  //   case "website":
-  return <Website Type={Type} />
-  //   case "vr":
-  //     return <Three />
-  //   default:
-  //     return <View seType={seType} />
-  // }
+  switch (Type) {
+    case "website":
+      return <Website Type={Type} />
+    case "vr":
+      return <Three />
+    default:
+      return <View seType={seType} />
+  }
 
 }
 

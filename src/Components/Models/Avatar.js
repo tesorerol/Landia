@@ -8,7 +8,7 @@ export default function Avatar(props) {
   const { Orbit, Camera } = props;
   const clock = new Clock();
   const group = useRef()
-  const { nodes, materials, animations, scene } = useGLTF('/assets/avatar.gltf')
+  const { nodes, materials, animations, scene } = useGLTF('https://landiaworld.s3.sa-east-1.amazonaws.com/avatar.gltf')
   const { actions, mixer } = useAnimations(animations, group);
   let keysPressed = {}
   let characterControls = new CharacterControls(scene, mixer, animations, Orbit.current, Camera.current, 'Idle', actions)
@@ -47,4 +47,4 @@ export default function Avatar(props) {
   )
 }
 
-useGLTF.preload('/assets/avatar.gltf')
+useGLTF.preload('https://landiaworld.s3.sa-east-1.amazonaws.com/avatar.gltf')
