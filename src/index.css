@@ -60,6 +60,20 @@
   transition: all .7s ease-in-out;
   width: 100%;
 }
+.collection {
+  align-items: flex-end;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  margin-right: 80px;
+  opacity: 0;
+  position: absolute;
+  top: 15%;
+  transition: all .7s ease-in-out;
+  width: 100%;
+}
+
 
 .ended {
   opacity: 1;

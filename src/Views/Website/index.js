@@ -1,13 +1,15 @@
-import React, { Suspense, useRef } from 'react'
+import React, { Suspense, useRef, useState } from 'react'
 import Logo from '../../Assets/img/landia.png';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Sky } from '@react-three/drei';
 import Earth from './Model/earth';
 import gsap from 'gsap';
+import Collections from './Model/collections';
 const scripts = ["/js/jquery.pagepiling.min.js", "/js/contact_us.js", "/js/script.js"];
 const Website = (props) => {
     const earhtG = useRef();
     const Camera = useRef();
+    const [collect, setCollect] = useState(false);
 
     function InitGlobal(e) {
         gsap.to(Camera.current.position, {
@@ -28,6 +30,7 @@ const Website = (props) => {
         })
 
     }
+
 
     function AnimationLoop(phase) {
         document.getElementById(phase).classList.remove("ended")
@@ -105,7 +108,17 @@ const Website = (props) => {
             <div className='main-section'>
                 <div className="init">
                     <img src={Logo} style={{ width: "50%" }} />
-                    <a className='start' href='#!' onClick={(e) => InitGlobal(e)}>Get start</a>
+                    <div style={{ display: "flex" }}>
+                        <div>
+                            <a className='start' href='#!' onClick={(e) => InitGlobal(e)}>Get start</a>
+                        </div>
+                        <div style={{ marginLeft: 10 }}>
+                            <a className='start' href='#!' onClick={() => setCollect(true)}>Buy Nft</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="collection" className="collection">
+                    <h1>Selecciona coleccion</h1>
                 </div>
                 <div id="about" className="about">
                     <div className='texto'>
@@ -196,7 +209,10 @@ const Website = (props) => {
                 <Sky />
                 {/* <OrbitControls /> */}
                 <Suspense>
-                    <Earth earhtG={earhtG} />
+                    {collect
+                        ? <Collections />
+                        : <Earth earhtG={earhtG} />
+                    }
                 </Suspense>
             </Canvas>
         </>
