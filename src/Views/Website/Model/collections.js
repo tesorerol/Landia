@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import Perezoso from '../assets/perezoso.png'
-import Jaguar from '../assets/jaguar.jpeg'
+import Jaguar from 'https://landiaworld.s3.sa-east-1.amazonaws.com/jaguar.jpeg'
 import gsap from 'gsap'
 import { useFrame } from '@react-three/fiber'
 import Web3 from 'web3';
