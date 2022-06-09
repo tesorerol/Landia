@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import Perezoso from '../assets/perezoso.png'
-import Jaguar from 'https://landiaworld.s3.sa-east-1.amazonaws.com/jaguar.jpeg'
+import Jaguar from '../assets/jaguar.png'
 import gsap from 'gsap'
 import { useFrame } from '@react-three/fiber'
 import Web3 from 'web3';
@@ -142,15 +142,15 @@ function Collections() {
     return (
         <>
 
-            <mesh ref={jaguar} position={[-10, -30, 0]} scale={5} onClick={() => MintNft('Jaguar')}>
+            <mesh ref={jaguar} position={[-10, -30, 0]} scale={5} onClick={() => Wallet ? MintNft('Jaguar') : alert("No se encontro ninguna extension de wallet")}>
                 <planeBufferGeometry attach="geometry" args={[3, 3]} />
                 <meshBasicMaterial attach="material" map={JG} />
             </mesh>
 
-            <mesh ref={perezoso} position={[10, -30, 0]} scale={5} onClick={() => MintNft('Perezoso')}>
+            <mesh ref={perezoso} position={[10, -30, 0]} scale={5} onClick={() => Wallet ? MintNft('Perezoso') : alert("No se encontro ninguna extension de wallet")}>
                 <planeBufferGeometry attach="geometry" args={[3, 3]} />
                 <meshBasicMaterial attach="material" map={PZ} />
-            </mesh>
+            </mesh >
         </>
     )
 }
