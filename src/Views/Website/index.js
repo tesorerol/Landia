@@ -11,13 +11,21 @@ const Website = (props) => {
     const Camera = useRef();
     const [collect, setCollect] = useState(false);
 
+
+    function OpenSell(e) {
+        document.getElementById("init").classList.remove("ended")
+        document.getElementById("team").classList.remove("ended")
+        setCollect(true);
+    }
+
     function InitGlobal(e) {
         gsap.to(Camera.current.position, {
             duration: 3,
             ease: "power3.inOut",
             z: 13,
             onComplete: () => {
-                e.target.parentNode.classList.remove("ended")
+                document.getElementById("init").classList.remove("ended")
+                document.getElementById("team").classList.remove("ended")
                 gsap.to(earhtG.current.position, {
                     duration: 3,
                     ease: "power3.inOut",
@@ -106,14 +114,14 @@ const Website = (props) => {
     return (
         <>
             <div className='main-section'>
-                <div className="init">
+                <div className="init" id="init">
                     <img src={Logo} style={{ width: "50%" }} />
                     <div style={{ display: "flex" }}>
                         <div>
                             <a className='start' href='#!' onClick={(e) => InitGlobal(e)}>Get start</a>
                         </div>
                         <div style={{ marginLeft: 10 }}>
-                            <a className='start' href='#!' onClick={() => setCollect(true)}>Buy Nft</a>
+                            <a className='start' href='#!' onClick={() => OpenSell()}>Buy Nft</a>
                         </div>
                     </div>
                 </div>
@@ -140,7 +148,7 @@ const Website = (props) => {
 
                 <div id="digital" className="about">
                     <div className='texto'>
-                        <h1>De lo digital a lo físico y de lo físico a lo digital</h1>
+                        <h1>De lo digital a lo fisico y de lo fisico a lo digital</h1>
                         <p>Landia genera una economía que va del mundo físico a lo digital y viceversa, logrando así impactar y generar necesidad en ambas esferas de las 2 realidades y en el punto de encuentro entre ambas: 1. la Realidad Física 2.la realidad del Metaverso Landia 3. Su Conexión con el Resto de Ecosistemas, en aras de una ineludible transición hacia una digitalización. Esta transición conlleva la responsabilidad de transicionar también hacia formas simbióticas y regenerativas en temas medioambientales y sociales.</p>
 
                         <a onClick={() => AnimationLoop('digital')} className='start'>Siguiente</a>
@@ -196,7 +204,11 @@ const Website = (props) => {
                             </span>
                         </div>
                     </div>
-                    <a onClick={(e) => InitGlobal(e)} className='start'>Sobre Landia</a>
+                    <div style={{ display: "flex", textAlign: "center" }}>
+                        <a onClick={(e) => InitGlobal(e)} className='start mr-5 text-center'>Sobre Landia</a>
+                        <a onClick={(e) => OpenSell()} className='start'>Buy Nft's</a>
+                    </div>
+
                 </div>
 
             </div>
